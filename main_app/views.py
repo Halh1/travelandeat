@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Destination
-
 # Create your views here.
 
 def home(request):
@@ -23,5 +22,9 @@ def destinations_detail(request, destination_id):
     })
 
 class DestinationCreate(CreateView):
+    model = Destination
+    fields = ('city', 'country')
+
+class DestinationUpdate(UpdateView):
     model = Destination
     fields = ('city', 'country')

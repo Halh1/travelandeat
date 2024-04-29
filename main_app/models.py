@@ -11,3 +11,19 @@ class Destination(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'destination_id': self.id })
     
+
+class Food(models.Model):
+    RATINGS = (
+        ('N/A', 'N/A'),
+        ('5', '5'),
+        ('4', '4'),
+        ('3', '3'),
+        ('2', '2'),
+        ('1', '1')
+    )
+    name = models.CharField(max_length=50)
+    rating = models.CharField(max_length=3, choices=RATINGS, default='N/A')
+    comment = models.TextField(max_length=300)
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+
+    
