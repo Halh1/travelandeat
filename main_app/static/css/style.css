@@ -1,0 +1,20 @@
+body {
+    background-color: #FDFFC2;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: fantasy;
+    color: #8BE8E5;
+  }
+.whole-nav, .page-footer {
+    background-color: #FF76CE ;
+}
+  
+main {
+    flex: 1 0 auto;
+  }
+  
+footer.page-footer {
+    padding-top: 0;
+    text-align: right;
+  }
