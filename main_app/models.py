@@ -26,4 +26,6 @@ class Food(models.Model):
     comment = models.TextField(max_length=300)
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.get_rating_display()} from {self.name} and {self.comment}'
     

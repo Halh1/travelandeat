@@ -9,6 +9,7 @@
   <title>Travel & Eat</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
   <header class="navbar-fixed">
@@ -21,7 +22,6 @@
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'destinations_index' %}">Destinations</a></li>
           <li><a href="{% url 'destinations_create' %}">Add a Destination</a></li>
-          <li><a href="{% url 'destinations_create' %}"></a></li>
         </ul>
       </div>
     </nav>

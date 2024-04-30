@@ -11,6 +11,9 @@
         <p class="city">{{ destination.city }}</p>
         <p class="country">{{ destination.country }}</p>
     </div>
+    <div>
+        <a href="{% url 'destinations_update' destination.id %}" class="center">Edit</a>
+    </div>
 </div>
 </a>
 {% endfor %}

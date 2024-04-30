@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView
 from .models import Destination
+from .forms import FoodForm
 # Create your views here.
 
 def home(request):
@@ -17,8 +18,11 @@ def destinations_index(request):
 
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
+
+    food_form = FoodForm()
     return render(request, 'destinations/detail.html', {
-        'destination': destination
+        'destination': destination,
+        'food_form': food_form
     })
 
 class DestinationCreate(CreateView):
@@ -28,3 +32,13 @@ class DestinationCreate(CreateView):
 class DestinationUpdate(UpdateView):
     model = Destination
     fields = ('city', 'country')
+
+
+def add_food(request, destination_id):
+    form = FoodForm(request.POST)
+
+    if form.is_valid():
+        new_food = form.save(commit=False)
+        new_food.destination_id = destination_id
+        new_food.save()
+    return redirect('detail', destination_id=destination_id)
