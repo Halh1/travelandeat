@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView, UpdateView
-from .models import Destination
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import Destination, Food
 from .forms import FoodForm
 # Create your views here.
 
@@ -21,7 +21,7 @@ def destinations_detail(request, destination_id):
 
     food_form = FoodForm()
     return render(request, 'destinations/detail.html', {
-        'destination': destination,
+        'destination': destination, 
         'food_form': food_form
     })
 
@@ -42,3 +42,11 @@ def add_food(request, destination_id):
         new_food.destination_id = destination_id
         new_food.save()
     return redirect('detail', destination_id=destination_id)
+
+class FoodUpdate(UpdateView):
+  model = Food
+  fields = ('name', 'rating', 'comment')
+
+class FoodDelete(DeleteView):
+  model = Food
+  success_url = '/destinations'
