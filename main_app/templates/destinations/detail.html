@@ -5,6 +5,7 @@
 <br>
 <div class="row">
     <div class="col s4">
+        Destination
         <div class="card">
             <div class="card-content">
                 <p>{{ destination.city }}</p>
@@ -21,6 +22,7 @@
     <div class="col s6">
         <form action="{% url 'add_food' destination.id %}" method="POST">
            {% csrf_token %}
+           Recommeded Food Spots
 
            {{ food_form.as_p }}
            <input type="submit"  class="btn" value="Add Food">
