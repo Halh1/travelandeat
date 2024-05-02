@@ -32,3 +32,11 @@ class Food(models.Model):
         return f'{self.get_rating_display()} from {self.name} is {self.comment}'
     def get_absolute_url(self):
         return reverse('detail', kwargs={'destination_id': self.id })
+    
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'Photo for destination_id: {self.destination_id} @{self.url}'

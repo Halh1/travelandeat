@@ -14,12 +14,26 @@
         </div>
     </div>
 
+  </div>
+<!---Adding Photo-->
+<div>
+  {% for photo in destination.photo_set.all %}
+  <img src="{{ photo.url }}" alt="{{ destination.city }}" class="responsive-img card-panel" id="img">
+  {% empty %}
+  <div class="card-panel teal-text center-align">No Photo Uploaded</div>
+  {% endfor %}
+  <form action="{% url 'add_photo' destination.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br>
+    <input type="submit" value="Upload Photo" class="btn">
 
-
-
+  </form>
+</div>
 
     <!-------Adding Food Spot-------->
     <div class="col s6">
+      <br>
         <form action="{% url 'add_food' destination.id %}" method="POST">
            {% csrf_token %}
            Recommeded Food Spots
@@ -47,8 +61,6 @@
 
 
 
-
-</div>
 
 
 
