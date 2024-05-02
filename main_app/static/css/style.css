@@ -20,6 +20,14 @@ footer.page-footer {
   }
 
 #img {
-  width: 200px;
-  height: 200px;
+  border: 1px solid #FDFFC2;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  height: 200px
+}
+
+.card {
+  border-radius: 6px;
+  text-align: center;
 }
