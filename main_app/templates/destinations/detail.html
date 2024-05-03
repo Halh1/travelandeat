@@ -38,7 +38,7 @@
         <form action="{% url 'add_food' destination.id %}" method="POST">
            {% csrf_token %}
 
-           <span class="foodspot">Recommeded Food Spots</span>
+           <h4>Recommeded Food Spots</h4>
 
            {{ food_form.as_p }}
            <input type="submit"  class="btn" value="Add Food">
@@ -53,8 +53,8 @@
                 <td>{{ food.name }}</td>
                 <td>{{ food.get_rating_display }}</td>
                 <td>{{ food.comment }}</td>
-                <td><a href="{% url 'food_update' food.id %}">Edit</a></td>
-                <td><a href="{% url 'food_delete' food.id %}">Delete</a></td>
+                <td><a href="{% url 'food_update' food.id %}" class="foodedit">Edit</a></td>
+                <td><a href="{% url 'food_delete' food.id %}" class="fooddelete">Delete</a></td>
               </tr>
             {% endfor %}
           </tbody>

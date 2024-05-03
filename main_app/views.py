@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Destination, Food, Photo
 from .forms import FoodForm
@@ -86,9 +87,11 @@ def add_food(request, destination_id):
     return redirect('detail', destination_id=destination_id)
 
 class FoodUpdate(LoginRequiredMixin, UpdateView):
-  model = Food
-  fields = ('name', 'rating', 'comment')
+   model = Food
+   fields = ('name', 'rating', 'comment')
+   success_url = '/destinations'
 
+ 
 class FoodDelete(LoginRequiredMixin, DeleteView):
   model = Food
   success_url = '/destinations'

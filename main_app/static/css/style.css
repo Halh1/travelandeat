@@ -3,7 +3,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family:"Architects Daughter", 'Shadows Into Light';
+    font-family:"Architects Daughter", 'Shadows Into Light', 'Times New Roman', Times, serif;
     color: #7EA1FF;
   }
 .whole-nav, .page-footer {
@@ -98,3 +98,15 @@ input {
 span {
   font-size: 14px;
 }
+.foodedit {
+  color: #560764;
+}
+
+.fooddelete {
+  color: #560764;
+}
+
+th {
+  text-align: center;
+}
+
