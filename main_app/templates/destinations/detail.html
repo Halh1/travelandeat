@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <br>
-<br>
-<br>
 <div class="row">
-    <div class="col s4">
+    <div class="col s12">
         <div class="card">
-          Destination
             <div class="card-content">
                 <p>{{ destination.city }}</p>
                 <p>{{ destination.country }}</p>
-                <div>
-                  <a href="{% url 'destinations_update' destination.id %}" class="left">Edit</a>
-                </div>
+                <a href="{% url 'destinations_update' destination.id %}" class="left">Edit</a>
             </div>
         </div>
     </div>
@@ -23,11 +18,13 @@
   {% for photo in destination.photo_set.all %}
   <img src="{{ photo.url }}" alt="{{ destination.city }}" class="responsive-img card-panel" id="img">
   {% empty %}
-  <div class="card-panel teal-text center-align">No Photo Uploaded</div>
+  <div class="card-panel center-align">No Photo Uploaded</div>
   {% endfor %}
   <form action="{% url 'add_photo' destination.id %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    <br>
     <input type="file" name="photo-file">
+    <br>
     <br>
     <input type="submit" value="Upload Photo" class="btn">
 
@@ -39,7 +36,8 @@
       <br>
         <form action="{% url 'add_food' destination.id %}" method="POST">
            {% csrf_token %}
-           Recommeded Food Spots
+
+           <span class="foodspot">Recommeded Food Spots</span>
 
            {{ food_form.as_p }}
            <input type="submit"  class="btn" value="Add Food">

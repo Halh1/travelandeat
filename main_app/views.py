@@ -36,8 +36,9 @@ def destinations_detail(request, destination_id):
         'food_form': food_form
     })
 
-import os
 
+import os
+@login_required
 def add_photo(request, destination_id):
 
   photo_file = request.FILES.get('photo-file', None)

@@ -1,13 +1,13 @@
 body {
-    background-color: #FDFFC2;
+    background-color: #FCF9EA;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family: fantasy;
-    color: #8BE8E5;
+    font-family:"Architects Daughter", 'Shadows Into Light';
+    color: #7EA1FF;
   }
 .whole-nav, .page-footer {
-    background-color: #FF76CE ;
+    background-color: #BADFDB ;
 }
   
 main {
@@ -23,11 +23,73 @@ footer.page-footer {
   border: 1px solid #FDFFC2;
   border-radius: 4px;
   padding: 5px;
-  width: 150px;
-  height: 200px
+  width: 200px;
+  height: 220px;
+  text-align: center;
 }
 
 .card {
-  border-radius: 6px;
+  border-radius: 8px;
+  background: rgb(228,197,233);
+  background: linear-gradient(201deg, rgba(220, 181, 226, 0.66) 39%, rgba(164,212,212,0.5357142857142857) 60%);
   text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #560764;
+  color: #D8CBBB ;
+  border-radius: 8px;
+  text-align: center;
+}
+
+input {
+  font-family: "Shadows Into Light";
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.about {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+} 
+.about-p, .about-p2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+
+}
+
+.list-dest {
+  color: #7EA1FF;
+  font-size: 25px;
+}
+
+.left {
+  font-size: 16px;
+  color: #560764;
+}
+
+.card-panel {
+  background-color: #EEE2DE;
+}
+
+span {
+  font-size: 14px;
 }

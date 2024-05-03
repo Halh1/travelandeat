@@ -125,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 LOGIN_REDIRECT_URL = '/destinations/'
 LOGOUT_REDIRECT_URL = '/'
 # Default primary key field type
