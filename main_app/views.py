@@ -26,6 +26,7 @@ def destinations_index(request):
     return render(request, 'destinations/index.html', {
         'destinations': destinations
     })
+
 @login_required
 def destinations_detail(request, destination_id):
     destination = Destination.objects.get(id=destination_id)
