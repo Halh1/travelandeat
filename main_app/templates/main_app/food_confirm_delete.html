@@ -2,11 +2,12 @@
 {% block content %}
 
 <h3>Delete {{ object.name }}</h3>
-
+<br>
+<br>
 <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'detail' food.id %}">Cancel</a>
+    <a href="{% url 'detail' food.id %}" class="btn">Cancel</a>
 </form>
 
 

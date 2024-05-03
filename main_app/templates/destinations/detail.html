@@ -8,6 +8,7 @@
                 <p>{{ destination.city }}</p>
                 <p>{{ destination.country }}</p>
                 <a href="{% url 'destinations_update' destination.id %}" class="left">Edit</a>
+                <a href="{% url 'destinations_delete' destination.id %}" class="right">Delete</a>
             </div>
         </div>
     </div>

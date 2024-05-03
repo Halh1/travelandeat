@@ -70,6 +70,10 @@ class DestinationUpdate(LoginRequiredMixin, UpdateView):
     model = Destination
     fields = ('city', 'country')
 
+class DestinationDelete(LoginRequiredMixin, DeleteView):
+  model = Destination
+  success_url = '/destinations'
+
 @login_required
 def add_food(request, destination_id):
     form = FoodForm(request.POST)

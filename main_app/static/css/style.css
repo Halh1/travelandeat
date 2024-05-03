@@ -86,6 +86,11 @@ input {
   color: #560764;
 }
 
+.right {
+  font-size: 16px;
+  color: #560764;
+}
+
 .card-panel {
   background-color: #EEE2DE;
 }
